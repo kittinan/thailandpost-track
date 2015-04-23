@@ -7,12 +7,6 @@ thailandpost-track
 
 Simple library for thailandpost track EMS
 
-Support :
-
-- HTTP Method GET, POST
-- Download File
-- Support Cookie with cookiejar file
-
 ## Requirement
 * PHP 5.3+
 * php5-curl
