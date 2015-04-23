@@ -30,7 +30,49 @@ This library on the Packagist.
 [https://packagist.org/packages/kittinan/thailandpost-track](https://packagist.org/packages/kittinan/thailandpost-track)
 
 ## Usage
+```php
+//Do not forget to define cookie path in constrauctor
+$track = new \KS\THAILANDPOST\Track('/tmp/cookie.txt');
+$ems = 'EN123456789TH';
+$trackers = $track->getTracks($ems);
 
+//Result return false or array of track status
+Array
+(
+    [0] => Array
+        (
+            [date] => April 17, 2015  10:42:25
+            [location] => PAK CHONG
+            [description] => Accept
+            [status] => 
+        )
+
+    [1] => Array
+        (
+            [date] => April 17, 2015  13:42:39
+            [location] => PAK CHONG
+            [description] => Items Into Container
+            [status] => 
+        )
+)
+
+```
+
+You can enable English language.
+```php
+//Do not forget to define cookie path in constrauctor
+$track = new \KS\THAILANDPOST\Track('/tmp/cookie.txt');
+
+//For Thai language (default)
+$track->enableThaiLanguage
+
+//For English language
+$track->enableEngLanguage();
+
+$ems = 'EN123456789TH';
+$trackers = $track->getTracks($ems);
+
+```
 
 
 License
