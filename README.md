@@ -4,6 +4,7 @@ thailandpost-track
 [![Code Coverage](https://scrutinizer-ci.com/g/kittinan/php-http/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kittinan/thailandpost-track/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kittinan/php-http/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kittinan/thailandpost-track/?branch=master)
 [![License](https://poser.pugx.org/kittinan/thailandpost-track/license)](https://packagist.org/packages/kittinan/thailandpost-track)
+[![Latest Stable Version](https://poser.pugx.org/kittinan/thailandpost-track/v/stable)](https://packagist.org/packages/kittinan/thailandpost-track)
 
 Simple library for thailandpost track EMS
 
