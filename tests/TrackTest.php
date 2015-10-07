@@ -26,10 +26,10 @@ class TrackTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(false, $trackers);
         
         //Success
-        $ems = 'EN111717744TH';
+        $ems = 'ED883533903TH';
         $trackers = $this->Tracker->getTracks($ems);
         $this->assertEquals(true, is_array($trackers));
-        $this->assertEquals(12, count($trackers));
+        $this->assertEquals(8, count($trackers));
         
         foreach ($trackers as $tracker) {
             $this->assertArrayHasKey('date', $tracker);
@@ -42,7 +42,33 @@ class TrackTest extends PHPUnit_Framework_TestCase {
         $this->Tracker->enableEngLanguage();
         $trackers = $this->Tracker->getTracks($ems);
         $this->assertEquals(true, is_array($trackers));
-        $this->assertEquals(12, count($trackers));
+        $this->assertEquals(8, count($trackers));
+        
+        foreach ($trackers as $tracker) {
+            $this->assertRegExp('/[a-zA-Z0-9 ]/', $tracker['date']);
+            $this->assertRegExp('/[a-zA-Z0-9 ]/', $tracker['location']);
+            $this->assertRegExp('/[a-zA-Z0-9 ]/', $tracker['description']);
+            $this->assertRegExp('/[a-zA-Z0-9 ]?/', $tracker['status']);
+        }
+        
+        //Success other case
+        $ems = 'EN136288445TH';
+        $trackers = $this->Tracker->getTracks($ems);
+        $this->assertEquals(true, is_array($trackers));
+        $this->assertEquals(4, count($trackers));
+        
+        foreach ($trackers as $tracker) {
+            $this->assertArrayHasKey('date', $tracker);
+            $this->assertArrayHasKey('location', $tracker);
+            $this->assertArrayHasKey('description', $tracker);
+            $this->assertArrayHasKey('status', $tracker);
+        }
+        
+        //Check Eng language
+        $this->Tracker->enableEngLanguage();
+        $trackers = $this->Tracker->getTracks($ems);
+        $this->assertEquals(true, is_array($trackers));
+        $this->assertEquals(4, count($trackers));
         
         foreach ($trackers as $tracker) {
             $this->assertRegExp('/[a-zA-Z0-9 ]/', $tracker['date']);
