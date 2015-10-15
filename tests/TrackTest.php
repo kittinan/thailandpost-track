@@ -55,7 +55,7 @@ class TrackTest extends PHPUnit_Framework_TestCase {
         $ems = 'EN136288445TH';
         $trackers = $this->Tracker->getTracks($ems);
         $this->assertEquals(true, is_array($trackers));
-        $this->assertEquals(4, count($trackers));
+        $this->assertEquals(9, count($trackers));
         
         foreach ($trackers as $tracker) {
             $this->assertArrayHasKey('date', $tracker);
@@ -68,7 +68,7 @@ class TrackTest extends PHPUnit_Framework_TestCase {
         $this->Tracker->enableEngLanguage();
         $trackers = $this->Tracker->getTracks($ems);
         $this->assertEquals(true, is_array($trackers));
-        $this->assertEquals(4, count($trackers));
+        $this->assertEquals(9, count($trackers));
         
         foreach ($trackers as $tracker) {
             $this->assertRegExp('/[a-zA-Z0-9 ]/', $tracker['date']);
