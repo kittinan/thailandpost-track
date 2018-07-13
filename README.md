@@ -1,3 +1,6 @@
+# Not working now!!! 
+## We need help [#Issue 1](https://github.com/kittinan/thailandpost-track/issues/1)
+
 thailandpost-track
 ========
 [![Build Status](https://travis-ci.org/kittinan/thailandpost-track.svg?branch=master)](https://travis-ci.org/kittinan/thailandpost-track)
