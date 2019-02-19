@@ -17,6 +17,7 @@ class TrackTest extends PHPUnit_Framework_TestCase {
         $proxy = $proxy_list[array_rand($proxy_list, 1)];
 
         $this->Tracker = new \KS\THAILANDPOST\Track($chrome_bin, $proxy);
+        $this->Tracker->setTimeout(30000);
     }
 
     public function getProxyList() {

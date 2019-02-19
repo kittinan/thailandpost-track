@@ -14,6 +14,7 @@ class Track {
 
     private $url = '';
     private $browser;
+    private $timeout = 10000;
 
     public function __construct($chrome_bin_path='chromium-browser', $proxy=null) {
         $this->enableThaiLanguage();
@@ -37,6 +38,10 @@ class Track {
     public function __destruct() {
         $this->browser->close();
     }
+
+    public function setTimeout($timeout) {
+        $this->timeout = $timeout;
+    }
     
     public function enableThaiLanguage() {
         $this->url = Track::$URL_POST . 'th';
@@ -51,9 +56,9 @@ class Track {
         }
 
         $trackerNumber = strtoupper($trackerNumber);
-        
+
         $page = $this->browser->createPage();
-        $page->navigate($this->url)->waitForNavigation('networkIdle', 10000);
+        $page->navigate($this->url)->waitForNavigation('networkIdle', $this->timeout);
 
         $evaluation = $page->evaluate(
             '(() => {
