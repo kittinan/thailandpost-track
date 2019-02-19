@@ -1,6 +1,0 @@
-before_script:
-    - composer install --prefer-dist
-    
-job1:
-    script:
-        - vendor/bin/phpunit tests/

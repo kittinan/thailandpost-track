@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Track And Trace : Result</title>
+		<meta content="text/html; charset=windows-874" http-equiv="Content-Type" />
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1" />
+		<meta name="CODE_LANGUAGE" content="Visual Basic .NET 7.1" />
+		<meta name="vs_defaultClientScript" content="JavaScript" />
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+		<link rel="stylesheet" type="text/css" href="CSS/baseStyle.css">
+		<style type="text/css">
+            .hidden
+            {
+               display:none;
+            }
+        </style>
+        <link href="CSS/StyleSheetAjax.css" rel="stylesheet" type="text/css" />
+        
+       <script src="Script JS/sweetalert-dev.js"></script>
+       <link rel="stylesheet" href="CSS/sweetalert.css">     
+               <script type="text/javascript">
+                     function JSalertTH(title,msg){
+                      // swal(title, msg, "warning");   
+                      
+                      	swal({   title: title,   
+                            text: msg,   
+                            type: "warning",   
+                            showCancelButton: false,   
+                            confirmButtonColor: "#DD6B55",   
+                            confirmButtonText: "ไปยังหน้าหลัก",   
+                            cancelButtonText: "",   
+                            closeOnConfirm: false,   
+                            closeOnCancel: false }, 
+                        	
+                            function(isConfirm){   
+                                if (isConfirm) 
+                            {   
+                                //swal("Account Removed!", "Your account is removed permanently!", "success");   
+		                        window.location = "default.aspx" 
+		                        //alert("default.aspx" );
+                                } 
+                                });
+                      
+                        } 
+
+                     function JSalertEN(title,msg){
+                      // swal(title, msg, "warning");   
+                                
+                        swal({   title: title,   
+                            text: msg,   
+                            type: "warning",   
+                            showCancelButton: false,   
+                            confirmButtonColor: "#DD6B55",   
+                            confirmButtonText: "Back",   
+                            cancelButtonText: "",   
+                            closeOnConfirm: false,   
+                            closeOnCancel: false }, 
+                        	
+                            function(isConfirm){   
+                                if (isConfirm) 
+                            {   
+                                //swal("Account Removed!", "Your account is removed permanently!", "success");   
+		                        window.location = "default.aspx" 
+		                        //alert("default.aspx" );
+                                } 
+                                });
+                      
+                        } 
+        </script>
+       
+	</head>
+	<body bottomMargin="0" leftMargin="0" topMargin="0"  bgColor="#ffffff" text="select">
+
+	
+		<script language="javascript">
+		<!--Loading Script Page -->
+		function windowwidth() {
+			if (navigator.userAgent.indexOf("MSIE") > 0) w=document.body.clientWidth;
+			else w=window.outerWidth;
+			return w;
+		}
+		function windowheight() {
+			if (navigator.userAgent.indexOf("MSIE") > 0) h=document.body.clientHeight;
+			else h= window.outerHeight;
+			return h;
+		}
+		var DHTML = (document.getElementById || document.all || document.layers);
+		if (DHTML) {
+			var obj=document.getElementById("waitDiv");
+			obj.style.left=(windowwidth()-waitIMG.width)/2;
+			obj.style.top=(windowheight()-waitIMG.height)/2;
+		}
+		function ap_getObj(name) { 
+			if (document.getElementById) { 
+				return document.getElementById(name).style; 
+			} else if (document.all) { 
+				return document.all[name].style; 
+			} else if (document.layers) { 
+				return document.layers[name]; 
+			} 
+		} 
+		function ap_showWaitMessage(div, flag)  { 
+			if (!DHTML) return; 
+			var x = ap_getObj(div); x.visibility = (flag) ? 'visible':'hidden'
+		} 
+		
+		
+		function setDalay() {
+				window.setTimeout('setDisableControl', 1000); 
+			}
+		function setDisableControl() {}
+		
+		<!--End Script Loading Page -->
+		<!-- Start Loading -->
+			ap_showWaitMessage('waitDiv', 1);
+			//setDalay();
+		</script>
+		<form name="Form1" method="post" action="result.aspx" id="Form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/tracking/WebResource.axd?d=_DSf4jqXvQ1z7bRh1qA3nFvGeyb-gTTRhloE9i0jmtC_94LGWRHTvF59yBvdXfY1sZo-jZ9fvvbcNbRvz6VkYnSjHkM1&amp;t=635670832605426737" type="text/javascript"></script>
+
+
+<script src="/tracking/ScriptResource.axd?d=SbnBYBeaxfHjepRg7S4YalkS4eetcm9_9KmWdBf6MvALH61Ta-cmOKsJiATLBbQ8YedlNWKWgjUNgSKSjuUHp5QllfrSuY2nPTWdiOXGgBrGKKXHDC5Xd_aVE6NbuqKGXXXALHskrAZb6VW2iWgq5eo54dqI5wqpZYtSTMjR2RnIsBhf0&amp;t=633923353035551250" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=50bOZt5gSbS7ozHwQQOWPPRjcFIckKiWS4_uslfqvmpmcqR4oALKeRnKPiyCat1cJmyPc8KmPZwCynj_kesJ1mjd5i_dkVJB2V6X_wJD0I8rrTwylXdBYxQQvjoAYG5rVqr8K2fGe5B2luhFhiqg8-u4hf2uR4gz1pYIFCbfyRiPcA0H0&amp;t=633923353035551250" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=mckVg4JvSTMdRcgGPUfzwakm-lsNSfsfA3pCUL5g9UF-paKGkIKwDj-e0VjlH57oxMAAQMXaoyi2UjPplQL6fzknk568zUo-uvEAKmXsoulD1qaqENEFFpps4fShNv_3jzKQYCjcpQSKWZZwAzR2lke98VU1&amp;t=633398816440000000" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=Q1Njr1g-dpftareU3HXr8Vjt_dtqMUWFN6D_650PUlBszX2qQ4ISjdKYfegVLkP_7QEojIahq3BLAgnVWM22LUe4LdWMJtogW00fmUiwILc3xu-b3k3RMIiq4_oQybUpyo9p0Ra1mQ9CnYe0VtSSrN1AQY81&amp;t=633398816440000000" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=nK4kpSxO6ok43BTTd48uXETB37QLEs-0ZfAqUKc851S9wFgL-Im2VBOEj2A8kqW5qYF01qaQahMwlC09GDzk2FMAFwIXGsDJerePxGO2Tmj1JuWS1NOaqeJ8hnb5cNITgGT1bTp4rpYMWPJm2W1enRjk_bykyH-xfr--b4Mw-JW_3R4b0&amp;t=633398816440000000" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=9zE88t-peM5tVXCyhcstDTceVvMH0VAuEkPB0q7xAE39ujBHMSK_4HMkgjA4b5YrENpEaVRfVeV_r_K8s6a7cl1RCtVGg34l0Mbtg69-RlvK02FLTgMvpVdyXGbKVQeHgHsLzwhW1UJtV0MxXs7Ix5m-m_81&amp;t=633398816440000000" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=bTu-dk8pwEedhNX1O-DozLfSWrLskjrto2_765m7gvcLQQGm80y_eTRcq8DZXdTn8K17RiLU-HQ9mtgZ4evKjSfuJ6qgQ4S_2Hzp23ByzJZ8hA3ofq2qjwyeRykNH08pBsXGaEbzYo3Va-Ha3C7D6GXZRXRj0HSi6nfvls4isa6Es5Hw0&amp;t=633398816440000000" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=5b6jap9Dl-eQsX3rxZdwqhRv6A8yqRwwHV5CNqi5ZSDcgydyA0LbXutfrCGFwsxeCK08NSXe9egrYh5GGWE1jYvY9Q9mdMhYmFPulSm1b71r7uV8jbR6PFLnKrG1wOPWnGkMNjrVjhBcvDluiUptJxAzlo0QO251_w9t_UR0g7FCU5pt0&amp;t=633398816440000000" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=QK4VFrXyrvL0VIsBaUBCEC0g10Nxv3KbXP4VmAxetzh0wzGOyBJR7XaSJMZA7leg2BJ0HJZEq96nd0_mkI5kdK38OxBUVY1tbJeo7tvYnPjr3E2ZdHtXIAzLvfmE1ZK77yqddxGXAt5G1DMVc3iLgYAzhtNAaOmWifKqnC9SevJeZTOn0&amp;t=633398816440000000" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=6rkWbD341vpaIzXAo1ZH7XapodtzVjkyLUKiYgMX483lzkJLXeXxmT7h6BXzAkdF4s_RomdMUfdDoWi_mUWyYG1Gbs8yO0XoBOIgUTuMU-tmaJYUtK0ZWlANvBhSX16ZyJjBsuhPeRix0OpzkeNUAkvvwjc1&amp;t=633398816440000000" type="text/javascript"></script>
+<script src="/tracking/ScriptResource.axd?d=IFHy2uZh41q5ShqXvIp4st3h4amRuHLH9phVfBgM89KPIYhWEeyh1WslRTMHisSicoO1bgwjp6HxBO4i54mNhhuYZuH0XDYEq3uu2mx-0EOGgNg0t1cZwUZRNg-Cpd-uasDrWQrbbpH0KqQW0W3AJtVEYJPWo0Z2alpc_tWrF3fekdLn0&amp;t=633398816440000000" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="7ABD6F5C" />
+</div>
+		<center>
+			<table border="0" cellSpacing="0" cellPadding="0" width="990" bgColor="#ffffff">
+				<tr>
+					<td>
+					        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', document.getElementById('Form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</script>
+
+							<!--Logo thailandpost -->
+			
+							<table   >
+								<tr>
+								    <br />
+									<td width="20%" align="left"><font face="Tahoma"><a href="http://www.thailandpost.co.th" id="bottle" ><img src="./Image/logopost.jpg" border="0" /></a></FONT></td>
+									<td width="40%">
+
+                                    </td>
+									<td style="HEIGHT: 1px" vAlign="bottom" width="40%" colSpan="2" align="right">
+									        <A class="Alink" href="track-help/index-thai.htm" target=_blank >
+									            <b>ช่วยเหลือ
+										        </b></A><FONT class="Slit" size="3" face="MS Sans Serif">&nbsp;|&nbsp;</FONT><A class="Alink" href="track-help/contact-thai.htm" target=_blank >
+										        <b>ติดต่อเรา</b><FONT size="3" face="MS Sans Serif"></FONT></A>
+								   </td>
+								</tr>
+							</table>
+
+							<!--Panel 1 Descripton -->
+							<table border="0" cellSpacing="0" borderColorLight="#e10000" borderColorDark="#ffffff"
+								cellPadding="0" width="100%" align="center">
+								<tr height="25" bgColor="#e10000" width="100%">
+								</tr>
+									<tr height="30" width="100%" >
+									<td height="30" colspan=2 vAlign="middle">
+									  <table cellSpacing="0" cellPadding="0" width="100%" >
+									    <tr>
+									        <td height="30" style="background-image:url(./Image/panelbanner1.jpg); width:30px;"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									        <td height="30" bgcolor="#BA0806" style="background-image:url(./Image/panelbanner2.jpg); background-position:right 0px; background-repeat:no-repeat;width:99%;" >
+									            <div id="Panel1" class="TabBar" style="width:99%;">
+	&nbsp;ผลการค้นหา : EW650052642TH
+</div>
+									        </td>
+        
+									    </tr>
+									   </table>
+
+									</td>
+								</tr>
+								<TR>
+									<TD width="100%" colSpan="2" align="center"><FONT face="Tahoma"></FONT><br>
+										<TABLE cellSpacing="0" cellPadding="0" width="100%" bgColor="white" height="100%" topMargin="0"
+											leftMargin="0">
+											<TR>
+							
+												<TD><div>
+	<table cellspacing="0" cellpadding="3" rules="cols" border="1" id="DataGrid1" style="width:100%;height:64px;font-size:14px;font-family:MS Sans Serif;color:Black;border-width:1px;border-style:Solid;border-color:#CCCCCC;background-color:White;border-collapse:collapse;">
+		<tr style="color:White;background-color:Gray;font-family:Microsoft Sans Serif;font-size:16px;font-weight:bold;height:40px;">
+			<th scope="col" style="width:25%;">วันที่ / เวลา</th><th scope="col" style="width:23%;">หน่วยงาน</th><th scope="col" style="width:22%;">คำอธิบาย</th><th scope="col" style="width:30%;">ผลการนำจ่าย</th><th scope="col" style="width:5%;">&nbsp;</th><th class="hidden" scope="col">&nbsp;</th><th class="hidden" scope="col">&nbsp;</th><th class="hidden" scope="col">&nbsp;</th><th class="hidden" scope="col">&nbsp;</th><th class="hidden" scope="col">&nbsp;</th><th class="hidden" scope="col">&nbsp;</th><th class="hidden" scope="col">&nbsp;</th><th class="hidden" scope="col">&nbsp;</th>
+		</tr><tr style="font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">เสาร์ 16 กุมภาพันธ์ 2562 <br> 11:30:28 น.</td><td style="width:23%;">ลำลูกกา</td><td style="width:22%;">รับเข้าระบบ</td><td>
+															                 
+															        <input type="hidden" name="DataGrid1$ctl02$hdnDELIVERYSTATUS" id="DataGrid1_ctl02_hdnDELIVERYSTATUS" />       
+															    </td><td></td><td class="hidden">304292</td><td class="hidden">SVR12150_01</td><td class="hidden">&nbsp;</td><td class="hidden">001 </td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">12150</td>
+		</tr><tr style="background-color:Gainsboro;font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">เสาร์ 16 กุมภาพันธ์ 2562 <br> 12:05:02 น.</td><td style="width:23%;">ลำลูกกา</td><td style="width:22%;">ใส่ของลงถุง</td><td>
+															                 
+															        <input type="hidden" name="DataGrid1$ctl03$hdnDELIVERYSTATUS" id="DataGrid1_ctl03_hdnDELIVERYSTATUS" />       
+															    </td><td></td><td class="hidden">304292</td><td class="hidden">IR62OERCR3U</td><td class="hidden">&nbsp;</td><td class="hidden">007 </td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">12150</td>
+		</tr><tr style="font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">เสาร์ 16 กุมภาพันธ์ 2562 <br> 12:08:41 น.</td><td style="width:23%;">ลำลูกกา</td><td style="width:22%;">ปิดถุง</td><td>
+															                 
+															        <input type="hidden" name="DataGrid1$ctl04$hdnDELIVERYSTATUS" id="DataGrid1_ctl04_hdnDELIVERYSTATUS" />       
+															    </td><td></td><td class="hidden">304292</td><td class="hidden">IR62OERCR3U</td><td class="hidden">12150</td><td class="hidden">008 </td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">12150</td>
+		</tr><tr style="background-color:Gainsboro;font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">อาทิตย์ 17 กุมภาพันธ์ 2562 <br> 04:17:33 น.</td><td style="width:23%;">เชียงใหม่</td><td style="width:22%;">รับถุง</td><td>
+															                 
+															        <input type="hidden" name="DataGrid1$ctl05$hdnDELIVERYSTATUS" id="DataGrid1_ctl05_hdnDELIVERYSTATUS" />       
+															    </td><td></td><td class="hidden">300197</td><td class="hidden">I5150B0E1804</td><td class="hidden">&nbsp;</td><td class="hidden">010 </td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">50000</td>
+		</tr><tr style="font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">อาทิตย์ 17 กุมภาพันธ์ 2562 <br> 05:57:28 น.</td><td style="width:23%;">เชียงใหม่</td><td style="width:22%;">ใส่ของลงถุง</td><td>
+															                 
+															        <input type="hidden" name="DataGrid1$ctl06$hdnDELIVERYSTATUS" id="DataGrid1_ctl06_hdnDELIVERYSTATUS" />       
+															    </td><td></td><td class="hidden">300197</td><td class="hidden">I5150B0E1804</td><td class="hidden">&nbsp;</td><td class="hidden">007 </td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">50000</td>
+		</tr><tr style="background-color:Gainsboro;font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">อาทิตย์ 17 กุมภาพันธ์ 2562 <br> 06:10:16 น.</td><td style="width:23%;">เชียงใหม่</td><td style="width:22%;">ปิดถุง</td><td>
+															                 
+															        <input type="hidden" name="DataGrid1$ctl07$hdnDELIVERYSTATUS" id="DataGrid1_ctl07_hdnDELIVERYSTATUS" />       
+															    </td><td></td><td class="hidden">300197</td><td class="hidden">I5150B0E1804</td><td class="hidden">9820232E5000050000</td><td class="hidden">008 </td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">50000</td>
+		</tr><tr style="font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">อาทิตย์ 17 กุมภาพันธ์ 2562 <br> 08:03:07 น.</td><td style="width:23%;">เชียงใหม่</td><td style="width:22%;">รับถุง</td><td>
+															                 
+															        <input type="hidden" name="DataGrid1$ctl08$hdnDELIVERYSTATUS" id="DataGrid1_ctl08_hdnDELIVERYSTATUS" />       
+															    </td><td></td><td class="hidden">300197</td><td class="hidden">M102020E1808</td><td class="hidden">&nbsp;</td><td class="hidden">010 </td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">50000</td>
+		</tr><tr style="background-color:Gainsboro;font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">อาทิตย์ 17 กุมภาพันธ์ 2562 <br> 13:27:05 น.</td><td style="width:23%;">เชียงใหม่</td><td style="width:22%;">เตรียมการนำจ่าย</td><td>
+															                 
+															        <input type="hidden" name="DataGrid1$ctl09$hdnDELIVERYSTATUS" id="DataGrid1_ctl09_hdnDELIVERYSTATUS" />       
+															    </td><td></td><td class="hidden">300197</td><td class="hidden">M60C070D1807</td><td class="hidden">&nbsp;</td><td class="hidden">011 </td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">50000</td>
+		</tr><tr style="font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">อาทิตย์ 17 กุมภาพันธ์ 2562 <br> 12:00-16:29 น.</td><td style="width:23%;">เชียงใหม่</td><td style="width:22%;">สถานะการนำจ่าย</td><td>
+															        ส่วนราชการ/บริษัทฯหยุด         
+															        <input type="hidden" name="DataGrid1$ctl10$hdnDELIVERYSTATUS" id="DataGrid1_ctl10_hdnDELIVERYSTATUS" value="ส่วนราชการ/บริษัทฯหยุด" />       
+															    </td><td></td><td class="hidden">300197</td><td class="hidden">M60C070D1807</td><td class="hidden">&nbsp;</td><td class="hidden">012 </td><td class="hidden">1200-1629</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">50000</td>
+		</tr><tr style="background-color:Gainsboro;font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">จันทร์ 18 กุมภาพันธ์ 2562 <br> 08:35:54 น.</td><td style="width:23%;">เชียงใหม่</td><td style="width:22%;">เตรียมการนำจ่าย</td><td>
+															                 
+															        <input type="hidden" name="DataGrid1$ctl11$hdnDELIVERYSTATUS" id="DataGrid1_ctl11_hdnDELIVERYSTATUS" />       
+															    </td><td></td><td class="hidden">300197</td><td class="hidden">ME1A050C1805</td><td class="hidden">&nbsp;</td><td class="hidden">011 </td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">&nbsp;</td><td class="hidden">50000</td>
+		</tr><tr style="font-family:Microsoft Sans Serif;font-size:16px;">
+			<td style="width:25%;">จันทร์ 18 กุมภาพันธ์ 2562 <br> 09:00-11:59 น.</td><td style="width:23%;">เชียงใหม่</td><td style="width:22%;">สถานะการนำจ่าย</td><td>
+															        ผู้รับได้รับสิ่งของเรียบร้อยแล้ว         
+															        <input type="hidden" name="DataGrid1$ctl12$hdnDELIVERYSTATUS" id="DataGrid1_ctl12_hdnDELIVERYSTATUS" value="ผู้รับได้รับสิ่งของเรียบร้อยแล้ว" />       
+															    </td><td>
+															        <a id="DataGrid1_ctl12_lbt" href="javascript:__doPostBack('DataGrid1$ctl12$lbt','')" style="display:inline-block;width:60px;"><font Size=2  ><b>ชื่อผู้รับ</b></font></a>
+															    </td><td class="hidden">300197</td><td class="hidden">T50000-D3-04</td><td class="hidden">&nbsp;</td><td class="hidden">012 </td><td class="hidden">0900-1159</td><td class="hidden">0</td><td class="hidden">&nbsp;</td><td class="hidden">50000</td>
+		</tr>
+	</table>
+</div>
+													  
+													</TD>
+											</TR>
+										</TABLE>
+										<P>
+									    
+										
+									    <P>
+									    
+										
+										<input type="image" name="btBack" id="btBack" src="./Image/ICON_Back_th.gif" style="border-width:0px;" />
+										
+											
+										
+<link href="CSS/StyleSheetAjax.css" rel="stylesheet" type="text/css" /> 
+<script language="javascript">
+        function CallPrint()
+        {
+         var prtContent = document.getElementById('PopUpSig_Panel_MessagePopup');
+         var WinPrint = window.open('print.htm','PrintWindow','letf=0,top=0,width=450%,height=250,toolbar=1,scrollbars=1,status=1');
+         WinPrint.document.write(prtContent.innerHTML);
+         WinPrint.document.close();
+         WinPrint.focus();
+         WinPrint.print();
+         WinPrint.close();
+        }
+</script>
+ 
+
+<div id="divPrint" >
+<div id="PopUpSig_Panel_MessagePopup" class="modalPopup" style="height:395px;width:415px;display: none">
+	
+    <table bgcolor="#FFFFFF"  bordercolor="#E10000" cellpadding="0" cellspacing="0" ><tr><td>
+     <table  cellpadding="0" cellspacing="0" style="WIDTH: 405px; HEIGHT: 376px; border-top: #BA0808 2px solid; border-right: #BA0808 2px solid; border-bottom: #BA0808 2px solid; border-left: #BA0808 2px solid;" >
+					<tr>
+						<td style="HEIGHT: 352px" valign="top" align="right">
+							<div id="PopUpSig_Panel1" style="border-color:White;border-width:0px;border-style:None;height:322px;width:100%;">
+		
+								<TABLE borderColor="#FFFFFF" height="50%" cellpadding="0" cellspacing="0" width="100%" >
+							         <TR  bgcolor="#e10000"   height="30"   width="100%"  >
+		                                <td  height="31" colspan=2 vAlign="middle"   background=".\Image\panelsig.jpg"width="100%">
+		                                                    <div id="PopUpSig_Panel2" class="TabBar" style="border-color:#E10000;width:100%;">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
+		                                    </td>
+									</TR>
+									<TR>
+										<TD class="LabelSignature" vAlign="top" align="center" width="100%" colSpan="3" height="146"><BR>
+											<TABLE height="150" width=100%>
+												<TR>
+													<TD class="FontDesc" vAlign="top" align="right" style="width: 50%"><B></B></TD>
+													<TD class="FontText" vAlign="top"></TD>
+												</TR>
+												<TR>
+													<TD class="FontDesc" vAlign="top" align="right" style="width: 50%"><B></B></TD>
+													<TD class="FontText" vAlign="top"></TD>
+												</TR>
+												<TR>
+													<TD class="FontDesc" vAlign="top" align="right" style="width: 50%"><B></B></TD>
+													<TD class="FontText" vAlign="top"></TD>
+												</TR>
+												<TR>
+													<TD class="FontDesc" vAlign="top" align="right" style="width: 50%"><B></B></TD>
+													<TD class="FontText" vAlign="top"><FONT face="Tahoma"></FONT></TD>
+												</TR>
+												<TR>
+													<TD class="FontDesc" vAlign="top" align="right" style="width: 50%"><FONT face="Tahoma"></FONT></TD>
+													<TD class="FontText" vAlign="top"></TD>
+												</TR>
+												<TR>
+													<TD class="FontDesc" vAlign="top" align="right" style="width: 50%"><B></B></TD>
+													<TD class="FontText" vAlign="top"><FONT face="Tahoma"></FONT></TD>
+												</TR>
+											</TABLE>
+										</TD>
+									</TR>
+								</TABLE>
+								<TABLE height="120" width="100%" align="center">
+									<TR>
+										<TD width="24%" style="height: 116px"></TD>
+										<TD vAlign="middle" align="center"  style="width: 191px; height: 111px;">
+											<P>
+												<img id="PopUpSig_Image1" title="Image Signature" src="Signatures/nosignature.jpg" style="border-color:White;border-width:1px;border-style:solid;height:111px;width:191px;" /></P>
+													
+										</TD>
+										<TD width="24%" style="height: 116px"></TD>
+									</TR>
+								</TABLE>
+							
+	</div>
+						</td>
+					</tr>
+					<tr>
+						<td bgColor="#ffffcc">
+							<TABLE width="100%" style="border-left-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-color: #e10000; border-bottom-color: #e10000; border-right-color: #e10000; border-top: #ba0808 2px solid;">
+								<TR>
+									<TD class="LabelSignatue" vAlign="top" align="left" colSpan="2" height="32" Width="80%" >&nbsp;
+										</TD>
+									<TD class="LabelSignatue" vAlign="top" align="right" Width="20%">
+							<input type="image" name="PopUpSig$bntPrint" id="PopUpSig_bntPrint" title="Print" src="image/print.gif" style="height:25px;width:25px;border-width:0px;CURSOR : hand" />
+                                        &nbsp;<input type="image" name="PopUpSig$bntClose" id="PopUpSig_bntClose" title="Close" src="image/close.gif" style="height:25px;width:25px;border-width:0px;CURSOR: hand" /></TD>
+								</TR>
+							</TABLE>
+						</td>
+					</tr>
+				</table>
+	</td></tr></table>
+
+</div>
+
+</div>
+
+
+
+
+
+
+										<P></P>
+										<P>&nbsp;</P>
+									</TD>
+								</TR>
+							</table>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			<center><FONT face="Tahoma"></FONT><br>
+				  <br>
+				                    <br>
+			</center>
+			</center>
+
+		
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {AjaxControlToolkit.ModalPopupBehavior.invokeViaServer('PopUpSig_ModalPopupExtender_MessagePopup', false); Sys.Application.remove_load(fn);};Sys.Application.add_load(fn);})();Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"PopUpSig_bntClose","DropShadow":true,"OkControlID":"PopUpSig_bntPrint","OnOkScript":"CallPrint();","PopupControlID":"PopUpSig_Panel_MessagePopup","PopupDragHandleControlID":"Form1","dynamicServicePath":"/tracking/result.aspx","id":"PopUpSig_ModalPopupExtender_MessagePopup"}, null, null, $get("PopUpSig_bntPrint"));
+});
+//]]>
+</script>
+</form>
+	
+	</body>
+</html>

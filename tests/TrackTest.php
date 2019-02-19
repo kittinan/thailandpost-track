@@ -11,10 +11,14 @@ class TrackTest extends PHPUnit_Framework_TestCase {
     private $Tracker = null;
 
     public function __construct() {
-        $this->Tracker = new \KS\THAILANDPOST\Track('/tmp/cookie.txt');
+        $chrome_bin = getenv('TRAVIS_CHROME') ?: 'chromium-browser';
+        //$proxy = '1.2.169.34:8080';
+        $this->Tracker = new \KS\THAILANDPOST\Track($chrome_bin, $proxy);
     }
 
+    
     public function testGetTracks() {
+
         //invalid ems tracker
         $ems = 'E111717744TH';
         $trackers = $this->Tracker->getTracks($ems);
@@ -26,10 +30,10 @@ class TrackTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(false, $trackers);
         
         //Success
-        $ems = 'ED883533903TH';
+        $ems = 'EW650052642TH';
         $trackers = $this->Tracker->getTracks($ems);
         $this->assertEquals(true, is_array($trackers));
-        $this->assertEquals(8, count($trackers));
+        $this->assertEquals(11, count($trackers));
         
         foreach ($trackers as $tracker) {
             $this->assertArrayHasKey('date', $tracker);
@@ -42,33 +46,7 @@ class TrackTest extends PHPUnit_Framework_TestCase {
         $this->Tracker->enableEngLanguage();
         $trackers = $this->Tracker->getTracks($ems);
         $this->assertEquals(true, is_array($trackers));
-        $this->assertEquals(8, count($trackers));
-        
-        foreach ($trackers as $tracker) {
-            $this->assertRegExp('/[a-zA-Z0-9 ]/', $tracker['date']);
-            $this->assertRegExp('/[a-zA-Z0-9 ]/', $tracker['location']);
-            $this->assertRegExp('/[a-zA-Z0-9 ]/', $tracker['description']);
-            $this->assertRegExp('/[a-zA-Z0-9 ]?/', $tracker['status']);
-        }
-        
-        //Success other case
-        $ems = 'EN136288445TH';
-        $trackers = $this->Tracker->getTracks($ems);
-        $this->assertEquals(true, is_array($trackers));
-        $this->assertEquals(9, count($trackers));
-        
-        foreach ($trackers as $tracker) {
-            $this->assertArrayHasKey('date', $tracker);
-            $this->assertArrayHasKey('location', $tracker);
-            $this->assertArrayHasKey('description', $tracker);
-            $this->assertArrayHasKey('status', $tracker);
-        }
-        
-        //Check Eng language
-        $this->Tracker->enableEngLanguage();
-        $trackers = $this->Tracker->getTracks($ems);
-        $this->assertEquals(true, is_array($trackers));
-        $this->assertEquals(9, count($trackers));
+        $this->assertEquals(11, count($trackers));
         
         foreach ($trackers as $tracker) {
             $this->assertRegExp('/[a-zA-Z0-9 ]/', $tracker['date']);
@@ -78,5 +56,28 @@ class TrackTest extends PHPUnit_Framework_TestCase {
         }
     }
     
+    public function testCleanText() {
+
+        $input = 'เสาร์ 16 กุมภาพันธ์ 2562 <br> 11:30:28 น.';
+        $expected = 'เสาร์ 16 กุมภาพันธ์ 2562  11:30:28 น.';
+        $result = $this->Tracker->cleanText($input);
+        $this->assertEquals($expected, $result);
+
+        $input = '
+        ผู้รับได้รับสิ่งของเรียบร้อยแล้ว         
+        ';
+        $expected = 'ผู้รับได้รับสิ่งของเรียบร้อยแล้ว';
+        $result = $this->Tracker->cleanText($input);
+        $this->assertEquals($expected, $result);
+
+    }
+
+    public function testParseHTML() {
+
+        $html = file_get_contents(__DIR__ .'/fixtures/1.html');
+        $result = $this->Tracker->parseHTML($html);
+        $this->assertEquals(11, count($result));
+
+    }
 
 }
