@@ -12,7 +12,26 @@ class TrackTest extends PHPUnit_Framework_TestCase {
 
     public function __construct() {
         $chrome_bin = getenv('TRAVIS_CHROME') ?: 'chromium-browser';
-        $this->Tracker = new \KS\THAILANDPOST\Track($chrome_bin);
+
+        $proxy_list = $this->getProxyList();
+        $proxy = $proxy_list[array_rand($proxy_list, 1)];
+
+        $this->Tracker = new \KS\THAILANDPOST\Track($chrome_bin, $proxy);
+    }
+
+    public function getProxyList() {
+
+        $cache_path = '/tmp/proxy.html';
+        if (file_exists($cache_path) == false) {
+            // Download proxy list
+            $url = 'https://asia-northeast1-mr-kittinan.cloudfunctions.net/thaiproxy';
+            $html = file_get_contents($url);
+            file_put_contents($cache_path, $html);
+        }
+
+        $html = file_get_contents($cache_path);
+        $ips = explode("\n", $html);
+        return $ips;
     }
 
     
