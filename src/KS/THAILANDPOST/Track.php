@@ -92,53 +92,13 @@ class Track {
         return !empty($tracks) ? $tracks : false;
     }
 
-    public function _getTracks($trackerNumber) {
-        if (empty($trackerNumber) || strlen($trackerNumber) != 13) {
-            return false;
-        }
-
-        $trackerNumber = strtoupper($trackerNumber);
-
-        $browserFactory = new BrowserFactory('/usr/bin/chromium-browser');
-        $browser = $browserFactory->createBrowser([
-            'windowSize' => [1280, 800],
-            'headless' => true,
-          ]);
-
-        $page = $browser->createPage();
-        $page->navigate($this->url)->waitForNavigation('networkIdle', 10000);
-
-        $evaluation = $page->evaluate(
-            '(() => {
-                    document.querySelector("#TextBarcode").value = "' . $trackerNumber . '";
-                })()'
-            );
-          
-        $slider = $page->evaluate("$('.bgSlider').position()")->getReturnValue();
-
-        $page->mouse()
-        ->move($slider['left'] + 5, $slider['top'] + 5)       
-        ->press()                       
-        ->move($slider['left'] + 5 + 179,  $slider['top'] + 5, ['steps' => 1])      
-        ->release();
-        
-        // given the last click was on a link, the next step will wait for the page to load after the link was clicked
-        $page->waitForReload();
-
-        $html = $page->evaluate("document.querySelector('body').innerHTML")->getReturnValue();
-
-        $browser->close();
-        
-        return $this->parseHTML($html);
-    }
-
     public function parseHTML($html) {
         //Convert TIS-620 to UTF-8
         //$html = iconv('TIS-620', 'UTF-8//IGNORE', $html);
         
         $dom = new Dom();
         $dom->load($html, ['enforceEncoding' => 'UTF-8']);
-        $trs = @$dom->find('table#DataGrid1 tr');
+        $trs = $dom->find('table#DataGrid1 tr');
 
         $results = [];
         for ($i = 1; $i < count($trs); $i++) {

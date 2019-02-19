@@ -6,7 +6,7 @@
         "php": ">=7.0",
         "ext-mbstring": "*",
         "chrome-php/chrome": "0.6.0",
-        "paquettg/php-html-parser": "1.7.0"
+        "paquettg/php-html-parser": ">=1.7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5"
