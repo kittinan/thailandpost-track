@@ -9,12 +9,12 @@ thailandpost-track
 [![License](https://poser.pugx.org/kittinan/thailandpost-track/license)](https://packagist.org/packages/kittinan/thailandpost-track)
 [![Latest Stable Version](https://poser.pugx.org/kittinan/thailandpost-track/v/stable)](https://packagist.org/packages/kittinan/thailandpost-track)
 
-Simple library for thailandpost track EMS
+Simple library for thailandpost track EMS with Chrome headless
 
 ## Requirement
-* PHP 5.3+
-* php5-curl
-* [kittinan/php-http](https://github.com/kittinan/php-http)
+* PHP 7.0+
+* mbstring extension
+* Chrome binary
 
 ## Composer
 
@@ -58,8 +58,9 @@ Array
 
 You can enable English language.
 ```php
-//Do not forget to define cookie path in constrauctor
-$track = new \KS\THAILANDPOST\Track('/tmp/cookie.txt');
+//Do not forget to define Google Chrome or Chromium binary path
+
+$track = new \KS\THAILANDPOST\Track('/usr/bin/chromium-browsert');
 
 //For Thai language (default)
 $track->enableThaiLanguage

@@ -1,14 +1,15 @@
 {
     "name": "kittinan/thailandpost-track",
-    "description": "Simple library for Thailandpost track ems ",
+    "description": "Simple library for Thailandpost track ems with chrome headless",
     "license": "MIT",
     "require": {
-        "php": ">=5.3.0",
-        "kittinan/php-http": "1.0",
-        "phpunit/phpunit": "4.8.12"
+        "php": ">=7.0",
+        "ext-mbstring": "*",
+        "chrome-php/chrome": "0.6.0",
+        "paquettg/php-html-parser": ">=1.7.0"
     },
     "require-dev": {
-        "satooshi/php-coveralls": "dev-master"
+        "phpunit/phpunit": "^6.5"
     },
     "autoload": {
         "psr-4": {
