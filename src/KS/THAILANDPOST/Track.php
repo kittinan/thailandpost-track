@@ -2,6 +2,8 @@
 
 namespace KS\THAILANDPOST;
 
+use HeadlessChromium\BrowserFactory;
+
 class Track {
 
     public static $URL_POST = 'http://track.thailandpost.co.th/tracking/default.aspx?lang=';
@@ -21,7 +23,7 @@ class Track {
         $this->url = Track::$URL_POST . 'th';
     }
     public function enableEngLanguage() {
-        $this->url = Track::$URL_POST . 'end';
+        $this->url = Track::$URL_POST . 'en';
     }
 
     public function getTracks($trackerNumber) {
@@ -31,6 +33,7 @@ class Track {
 
         $trackerNumber = strtoupper($trackerNumber);
         
+        /*
         //Find require parameter
         $html = $this->Http->get($this->url);
         if (empty($html)) {
@@ -70,6 +73,40 @@ class Track {
         
         //Convert TIS-620 to UTF-8
         $html = iconv('TIS-620', 'UTF-8//IGNORE', $html);
+
+        */
+
+
+        $browserFactory = new BrowserFactory('/usr/bin/chromium-browser');
+        $browser = $browserFactory->createBrowser([
+            'windowSize' => [1280, 800],
+            'headless' => true,
+          ]);
+
+        $page = $browser->createPage();
+        $page->navigate($this->url)->waitForNavigation('networkIdle', 10000);
+
+        $evaluation = $page->evaluate(
+            '(() => {
+                    document.querySelector("#TextBarcode").value = "' . $trackerNumber . '";
+                })()'
+            );
+          
+        $slider = $page->evaluate("$('.bgSlider').position()")->getReturnValue();
+
+        $page->mouse()
+        ->move($slider['left'] + 5, $slider['top'] + 5)       
+        ->press()                       
+        ->move($slider['left'] + 5 + 179,  $slider['top'] + 5, ['steps' => 1])      
+        ->release();
+        
+        // given the last click was on a link, the next step will wait for the page to load after the link was clicked
+        $page->waitForReload();
+
+        $html = $page->evaluate("document.querySelector('body').innerHTML")->getReturnValue();
+
+        $browser->close();
+
         
         $pattern = '#<tr.*?>[\s\S]*?<td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td><td.*?>(.*?)</td>#';
         preg_match_all($pattern, $html, $matches);
