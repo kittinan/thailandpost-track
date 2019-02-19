@@ -12,8 +12,7 @@ class TrackTest extends PHPUnit_Framework_TestCase {
 
     public function __construct() {
         $chrome_bin = getenv('TRAVIS_CHROME') ?: 'chromium-browser';
-        //$proxy = '1.2.169.34:8080';
-        $this->Tracker = new \KS\THAILANDPOST\Track($chrome_bin, $proxy);
+        $this->Tracker = new \KS\THAILANDPOST\Track($chrome_bin);
     }
 
     
