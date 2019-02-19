@@ -3,14 +3,16 @@
 require __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../src/KS/THAILANDPOST/Track.php';
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * @property HTTP $Http
  */
-class TrackTest extends PHPUnit_Framework_TestCase {
+class TrackTest extends TestCase {
 
     private $Tracker = null;
 
-    public function __construct() {
+    public function setUp() {
         $chrome_bin = getenv('TRAVIS_CHROME') ?: 'chromium-browser';
 
         $proxy_list = $this->getProxyList();
@@ -18,6 +20,10 @@ class TrackTest extends PHPUnit_Framework_TestCase {
 
         $this->Tracker = new \KS\THAILANDPOST\Track($chrome_bin, $proxy);
         $this->Tracker->setTimeout(30000);
+    }
+
+    public function tearDown() {
+        unlink('/tmp/proxy.html');
     }
 
     public function getProxyList() {
