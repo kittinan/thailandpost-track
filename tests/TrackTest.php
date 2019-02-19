@@ -44,6 +44,11 @@ class TrackTest extends TestCase {
     
     public function testGetTracks() {
 
+        $env_travis = getenv('TRAVIS_CHROME');
+        if (!empty($env_travis)) {
+            $this->markTestSkipped('Skip test because Travis CI Network connection');
+        }
+
         //invalid ems tracker
         $ems = 'E111717744TH';
         $trackers = $this->Tracker->getTracks($ems);
