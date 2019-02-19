@@ -1,11 +1,6 @@
-# Not working now!!! 
-## We need help [#Issue 1](https://github.com/kittinan/thailandpost-track/issues/1)
-
 thailandpost-track
 ========
 [![Build Status](https://travis-ci.org/kittinan/thailandpost-track.svg?branch=master)](https://travis-ci.org/kittinan/thailandpost-track)
-[![Code Coverage](https://scrutinizer-ci.com/g/kittinan/php-http/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kittinan/thailandpost-track/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kittinan/php-http/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kittinan/thailandpost-track/?branch=master)
 [![License](https://poser.pugx.org/kittinan/thailandpost-track/license)](https://packagist.org/packages/kittinan/thailandpost-track)
 [![Latest Stable Version](https://poser.pugx.org/kittinan/thailandpost-track/v/stable)](https://packagist.org/packages/kittinan/thailandpost-track)
 
@@ -27,10 +22,22 @@ This library on the Packagist.
 
 [https://packagist.org/packages/kittinan/thailandpost-track](https://packagist.org/packages/kittinan/thailandpost-track)
 
+## Install Chrome
+
+Install chromium-browser or Google Chrome
+
+### Ubuntu/Debian
+
+```
+sudo apt-get install chromium-browser
+```
+
 ## Usage
 ```php
-//Do not forget to define cookie path in constrauctor
-$track = new \KS\THAILANDPOST\Track('/tmp/cookie.txt');
+//Do not forget to define Google Chrome or Chromium binary path
+
+$chrome_bin = '/usr/bin/chromium-browser';
+$track = new \KS\THAILANDPOST\Track($chrome_bin);
 $ems = 'EN123456789TH';
 $trackers = $track->getTracks($ems);
 
@@ -60,7 +67,8 @@ You can enable English language.
 ```php
 //Do not forget to define Google Chrome or Chromium binary path
 
-$track = new \KS\THAILANDPOST\Track('/usr/bin/chromium-browsert');
+$chrome_bin = '/usr/bin/chromium-browser';
+$track = new \KS\THAILANDPOST\Track($chrome_bin);
 
 //For Thai language (default)
 $track->enableThaiLanguage
