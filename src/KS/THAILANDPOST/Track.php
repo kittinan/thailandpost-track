@@ -10,29 +10,33 @@ class RequestRejectException extends Exception { }
 
 class Track {
 
-    public static $URL_POST = 'http://track.thailandpost.co.th/tracking/default.aspx?lang=';
+    public static $URL_POST = 'http://track.thailandpost.co.th/tracking/default.aspx?';
 
     private $url = '';
     private $browser;
     private $timeout = 10000;
 
-    public function __construct($chrome_bin_path='chromium-browser', $proxy=null) {
-        $this->enableThaiLanguage();
-
+    public function __construct($chrome_bin_path ='chromium-browser', $lang = 'th', $proxy = null) {
+        if ($lang == 'th') {
+            $this->enableThaiLanguage(); 
+        } else {
+            $this->enableEngLanguage(); 
+        }
+        
         $browserFactory = new BrowserFactory($chrome_bin_path);
-        $option = [
+        $options = [
             'windowSize' => [1280, 800],
             'headless' => true,
         ];
-
+        
         if (!empty($proxy)) {
-            $option['customFlags'] = [
+            $options['customFlags'] = [
                 '--proxy-server="' . $proxy . '"', 
                 //'--incognito',
             ];
         }
-
-        $this->browser = $browserFactory->createBrowser($option);
+        
+        $this->browser = $browserFactory->createBrowser($options);
     }
 
     public function __destruct() {
@@ -44,10 +48,10 @@ class Track {
     }
     
     public function enableThaiLanguage() {
-        $this->url = Track::$URL_POST . 'th';
+        $this->url = Track::$URL_POST . 'lang=th';
     }
     public function enableEngLanguage() {
-        $this->url = Track::$URL_POST . 'en';
+        $this->url = Track::$URL_POST . 'lang=en';
     }
 
     public function getTracks($trackerNumber) {
